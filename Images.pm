@@ -130,7 +130,7 @@ END
 					if (! $self->{'_opts'}->{'q'}) {
 						print "$page\n";
 					}
-					$self->_do_command("wget $quiet$page");
+					$self->_download($page, $path_segments[-1]);
 				}
 
 				# Strip URI part.
@@ -213,6 +213,16 @@ END
 	barf('LIST', join "\n", @pages);
 
 	return 0;
+}
+
+sub _download {
+	my ($self, $uri, $local_file) = @_;
+
+	$self->{'lwp_user_agent'}->get($uri,
+		':content_file' => $local_file,
+	);
+
+	return;
 }
 
 # Get title from page.
