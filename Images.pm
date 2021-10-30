@@ -88,7 +88,7 @@ $kramerius_id
 $object_id
 END
 
-	my $quiet = '-q';
+	my $quiet = '-q ';
 	if ($self->{'_opts'}->{'v'}) {
 		$quiet = '';
 	}
@@ -123,7 +123,7 @@ END
 					if (! $self->{'_opts'}->{'q'}) {
 						print "$page\n";
 					}
-					$self->_do_command("wget $quiet $page");
+					$self->_do_command("wget $quiet$page");
 				}
 
 				# Strip URI part.
