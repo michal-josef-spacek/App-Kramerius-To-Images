@@ -5,6 +5,8 @@ TODO
 4. Prepsat na pouzivani WebService::Kramerius::API4
 5. Kdyz stahuji konkretni stranky v Kramerius v3, tak tam neni METS. Staci stahnout jednu stranku.
 6. Podpora pro JP2 - kkvhb 5119cec9-1e2b-41d4-9b69-6bb21cefb8d3 - blbe je, ze ulozim .*jpg misto .*jp2
+kramerius4 dobre detekuje jp2 a ulozi jej, ale v LIST se objevi natvrdo
+predpokladany *.jpg
 7.
 
 Applied
