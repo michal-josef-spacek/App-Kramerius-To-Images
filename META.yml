@@ -18,6 +18,7 @@ meta-spec:
 name: App-Kramerius-To-Images
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt

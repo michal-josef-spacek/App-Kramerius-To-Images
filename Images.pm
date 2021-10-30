@@ -62,7 +62,7 @@ sub run {
 		print STDERR "\t--version\tPrint version.\n";
 		print STDERR "\tkramerius_id\tKramerius system id. e.g. ".
 			"mzk\n";
-		print STDERR "\tobject_uuid\tKramerius object id (could be ".
+		print STDERR "\tobject_id\tKramerius object id (could be ".
 			"page, series or book edition).\n";
 		return 1;
 	}
@@ -265,18 +265,23 @@ Returns 1 for error, 0 for success.
  use strict;
  use warnings;
 
- use App::Kramerius::URI;
+ use App::Kramerius::To::Images;
 
  # Arguments.
  @ARGV = (
-         'mzk',
+         '-h',
  );
 
  # Run.
- exit App::Kramerius::URI->new->run;
+ exit App::Kramerius::To::Images->new->run;
 
  # Output like:
- # http://kramerius.mzk.cz/ 4
+ # Usage: ./ex1.pl [-h] [-v] [--version] [kramerius_id object_id]
+ #         -h              Help.
+ #         -v              Verbose mode.
+ #         --version       Print version.
+ #         kramerius_id    Kramerius system id. e.g. mzk
+ #         object_id       Kramerius object id (could be page, series or book edition).
 
 =head1 DEPENDENCIES
 
