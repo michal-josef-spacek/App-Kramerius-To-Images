@@ -5,6 +5,7 @@ use warnings;
 
 use Class::Utils qw(set_params);
 use Data::Kramerius;
+use English;
 use Error::Pure qw(err);
 use Getopt::Std;
 use HTTP::Request;
@@ -158,7 +159,12 @@ END
 		}
 
 		# Get perl structure.
-		my $json_ar = JSON::XS->new->decode($json);
+		my $json_ar = eval {
+			JSON::XS->new->decode($json);
+		};
+		if ($EVAL_ERROR) {
+			err "Cannot parse JSON on '$json_uri' URL.";
+		}
 
 		# Each page.
 		my $images = 0;
@@ -290,6 +296,7 @@ Returns 1 for error, 0 for success.
 
 L<Class::Utils>,
 L<Data::Kramerius>,
+L<English>,
 L<Error::Pure>,
 L<Getopt::Std>,
 L<HTTP::Request>,

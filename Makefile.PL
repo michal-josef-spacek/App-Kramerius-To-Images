@@ -21,6 +21,7 @@ readme_from 'bin/kramerius2images';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0;
 requires 'Data::Kramerius' => 0;
+requires 'English' => 0;
 requires 'Error::Pure' => 0;
 requires 'Getopt::Std' => 0;
 requires 'HTTP::Request' => 0;
