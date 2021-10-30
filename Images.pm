@@ -51,13 +51,15 @@ sub run {
 	# Process arguments.
 	$self->{'_opts'} = {
 		'h' => 0,
+		'q' => 0,
 		'v' => 0,
 	};
-	if (! getopts('hv', $self->{'_opts'}) || (! -r 'ROOT' && @ARGV < 2)
+	if (! getopts('hqv', $self->{'_opts'}) || (! -r 'ROOT' && @ARGV < 2)
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-h] [-v] [--version] [kramerius_id object_id]\n";
+		print STDERR "Usage: $0 [-h] [-q] [-v] [--version] [kramerius_id object_id]\n";
 		print STDERR "\t-h\t\tHelp.\n";
+		print STDERR "\t-q\t\tQuiet mode.\n";
 		print STDERR "\t-v\t\tVerbose mode.\n";
 		print STDERR "\t--version\tPrint version.\n";
 		print STDERR "\tkramerius_id\tKramerius system id. e.g. ".
@@ -276,8 +278,9 @@ Returns 1 for error, 0 for success.
  exit App::Kramerius::To::Images->new->run;
 
  # Output like:
- # Usage: ./ex1.pl [-h] [-v] [--version] [kramerius_id object_id]
+ # Usage: ./ex1.pl [-h] [-q] [-v] [--version] [kramerius_id object_id]
  #         -h              Help.
+ #         -q              Quiet mode.
  #         -v              Verbose mode.
  #         --version       Print version.
  #         kramerius_id    Kramerius system id. e.g. mzk
