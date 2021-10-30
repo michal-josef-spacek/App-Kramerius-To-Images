@@ -32,6 +32,7 @@ requires:
   JSON::XS: 0
   LWP::UserAgent: 0
   METS::Files: 0
+  Perl6::Slurp: 0
   perl: 5.6.0
 resources:
   bugtracker: https://github.com/michal-josef-spacek/App-Kramerius-To-Images/issues
