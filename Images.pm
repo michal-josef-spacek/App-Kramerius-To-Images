@@ -180,7 +180,7 @@ END
 			if ($page_hr->{'model'} ne 'page') {
 				next;
 			}
-			my $title = get_page_title($page_hr);
+			my $title = $self->_get_page_title($page_hr);
 			my $pid = $page_hr->{'pid'};
 			$pid =~ s/^uuid://ms;
 			# TODO Support for page number in $pid =~ uuid:__uuid__@__page_number__ (PDF and number of page in PDF)
