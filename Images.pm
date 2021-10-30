@@ -101,6 +101,9 @@ END
 			'/'.$object_id;
 
 		# Get METS.
+		if ($self->{'_opts'}->{'v'}) {
+			print "Downloads $mets_uri\n";
+		}
 		my $req = HTTP::Request->new('GET' => $mets_uri);
 		my $res = $self->{'lwp_user_agent'}->request($req);
 		my $mets;
