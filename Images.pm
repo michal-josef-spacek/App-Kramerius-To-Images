@@ -142,7 +142,7 @@ END
 
 		# URI for children JSON.
 		my $json_uri = $self->{'_kramerius_obj'}->url.'search/api/v5.0/item/uuid:'.
-			$object_id.'children';
+			$object_id.'/children';
 
 		# Get JSON.
 		my $req = HTTP::Request->new('GET' => $json_uri);
