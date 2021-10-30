@@ -123,7 +123,7 @@ END
 					if (! $self->{'_opts'}->{'q'}) {
 						print "$page\n";
 					}
-					do_command("wget $quiet $page");
+					$self->_do_command("wget $quiet $page");
 				}
 
 				# Strip URI part.
@@ -180,7 +180,7 @@ END
 				print "$pid: $title\n";
 			}
 			if (! -r $pid.'.jpg') {
-				do_command("kramerius4 $quiet -o $pid $kramerius_id $pid");
+				$self->_do_command("kramerius4 $quiet -o $pid $kramerius_id $pid");
 			}
 			push @pages, $pid.'.jpg';
 			$images++;
@@ -194,7 +194,7 @@ END
 			}
 			my $output_file = $pid.'.jpg';
 			if (! -r $output_file) {
-				do_command("kramerius4 $quiet -o $pid $kramerius_id $pid");
+				$self->_do_command("kramerius4 $quiet -o $pid $kramerius_id $pid");
 			}
 			push @pages, $output_file;
 		}
