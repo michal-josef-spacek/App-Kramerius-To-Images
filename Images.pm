@@ -166,6 +166,12 @@ END
 				'message', $res->message;
 		}
 
+		# Check JSON content type.
+		if ($res->headers->content_type ne 'application/json') {
+			err "Content type isn't 'application/json' for $json_uri.",
+				'Content-Type', $res->headers->content_type;
+		}
+
 		# Get perl structure.
 		my $json_ar = eval {
 			JSON::XS->new->decode($json);
