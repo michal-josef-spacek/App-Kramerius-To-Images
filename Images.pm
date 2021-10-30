@@ -177,7 +177,8 @@ END
 			JSON::XS->new->decode($json);
 		};
 		if ($EVAL_ERROR) {
-			err "Cannot parse JSON on '$json_uri' URL.";
+			err "Cannot parse JSON on '$json_uri' URL.",
+				'JSON decode error', $EVAL_ERROR;
 		}
 
 		# Each page.
