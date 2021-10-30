@@ -179,8 +179,9 @@ END
 			if (! $self->{'_opts'}->{'q'}) {
 				print "$pid: $title\n";
 			}
+			# XXX Support of jpg only
 			if (! -r $pid.'.jpg') {
-				$self->_do_command("kramerius4 $quiet -o $pid $kramerius_id $pid");
+				$self->_do_command("kramerius4 $quiet $kramerius_id $pid");
 			}
 			push @pages, $pid.'.jpg';
 			$images++;
@@ -192,9 +193,10 @@ END
 			if (! $self->{'_opts'}->{'q'}) {
 				print "$pid: ?\n";
 			}
+			# XXX Support of jpg only
 			my $output_file = $pid.'.jpg';
 			if (! -r $output_file) {
-				$self->_do_command("kramerius4 $quiet -o $pid $kramerius_id $pid");
+				$self->_do_command("kramerius4 $quiet $kramerius_id $pid");
 			}
 			push @pages, $output_file;
 		}
