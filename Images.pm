@@ -3,6 +3,7 @@ package App::Kramerius::To::Images;
 use strict;
 use warnings;
 
+use App::Kramerius::V4;
 use Class::Utils qw(set_params);
 use Data::Kramerius;
 use English;
@@ -313,6 +314,7 @@ Returns 1 for error, 0 for success.
 
 =head1 DEPENDENCIES
 
+L<App::Kramerius::V4>,
 L<Class::Utils>,
 L<Data::Kramerius>,
 L<English>,

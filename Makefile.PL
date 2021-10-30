@@ -19,6 +19,7 @@ name 'App-Kramerius-To-Images';
 perl_version 5.006;
 readme_from 'bin/kramerius2images';
 recursive_author_tests('xt');
+requires 'App::Kramerius::V4';
 requires 'Class::Utils' => 0;
 requires 'Data::Kramerius' => 0;
 requires 'English' => 0;
