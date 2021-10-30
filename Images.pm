@@ -115,6 +115,10 @@ END
 			# Get 'img' files.
 			my @page_uris = $obj->get_use_files('img');
 
+			if (! @page_uris) {
+				err 'No images to download.';
+			}
+
 			# Get images.
 			foreach my $page (@page_uris) {
 				my $uri = URI->new($page);
