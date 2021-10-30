@@ -1,5 +1,7 @@
 0.02
+ - Add detection for bad JSON content type.
  - Fix author name.
+ - Improve JSON decoding error.
 
 0.01 2021-10-30T16:12:55+02:00
  - First version.
