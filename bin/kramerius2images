@@ -1,0 +1,105 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use App::Kramerius::To::Images;
+
+# Version.
+our $VERSION = 0.01;
+
+# Run.
+exit App::Kramerius::To::Images->new->run;
+
+# Print version.
+sub VERSION_MESSAGE {
+	print $VERSION."\n";
+	exit 0;
+}
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+kramerius2images - Script which fetch Kramerius object to local storage.
+
+=head1 SYNOPSIS
+
+ kramerius2images [-h] [-v] [--version] kramerius_id uuid
+
+=head1 DESCRIPTION
+
+Script which fetch Kramerius object to local storage.
+Object could be page, serial, edition.
+
+=head1 ARGUMENTS
+
+=over 8
+
+=item * C<-h>
+
+Print help.
+
+=item * C<--version>
+
+Print version of script.
+
+=item * C<kramerius_id>
+
+Kramerius system id.
+
+=item * C<uuid>
+
+Kramerius uuid.
+
+=back
+
+=head1 EXAMPLE1
+
+ kramerius-uri
+
+ # Output:
+ # Usage: kramerius-uri [-h] [--version] kramerius_id
+ #         -h              Help.
+ #         --version       Print version.
+ #         kramerius_id    Kramerius system id. e.g. mzk
+
+=head1 EXAMPLE2
+
+ kramerius-uri mzk
+
+ # Output:
+ # http://kramerius.mzk.cz/ 4
+
+=head1 EXAMPLE3
+
+ kramerius-uri ABA001
+
+ # Output:
+ # http://kramerius.nkp.cz/ 3
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/App-Kramerius-URI>
+
+=head1 AUTHOR
+
+Michal Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+© 2021 Michal Josef Špaček
+
+BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut

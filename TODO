@@ -1,0 +1,13 @@
+TODO
+====
+2. Az bude skript, pro kramerius v3 stahovani djvu, tak tady prepsat na to.
+3. Prepsat parsovani ROOT souboru na cteni techto informaci ze stdin.
+4. Prepsat na pouzivani WebService::Kramerius::API4
+5. Kdyz stahuji konkretni stranky v Kramerius v3, tak tam neni METS. Staci stahnout jednu stranku.
+6. Podpora pro JP2 - kkvhb 5119cec9-1e2b-41d4-9b69-6bb21cefb8d3 - blbe je, ze ulozim .*jpg misto .*jp2
+7.
+
+Applied
+=======
+1. Presunout zde kramerius2images
+OK [20211030] skim
