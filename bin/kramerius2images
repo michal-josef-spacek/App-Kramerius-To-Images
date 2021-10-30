@@ -29,7 +29,7 @@ kramerius2images - Script which fetch Kramerius object to local storage.
 
 =head1 SYNOPSIS
 
- kramerius2images [-h] [-v] [--version] kramerius_id uuid
+ kramerius2images [-h] [-q] [-v] [--version] [kramerius_id object_id]
 
 =head1 DESCRIPTION
 
@@ -50,41 +50,62 @@ Print version of script.
 
 =item * C<kramerius_id>
 
-Kramerius system id.
+Kramerius system id. List of supported Kramerius systems is handled via
+L<Data::Kramerius>.
 
-=item * C<uuid>
+=item * C<object_id>
 
-Kramerius uuid.
+Kramerius object id. For Kramerius V4 is uuid, for Kramerius V3 integer id.
 
 =back
 
 =head1 EXAMPLE1
 
- kramerius-uri
+ kramerius2images
 
  # Output:
- # Usage: kramerius-uri [-h] [--version] kramerius_id
+ # Usage: kramerius2images [-h] [-q] [-v] [--version] [kramerius_id object_id]
  #         -h              Help.
+ #         -q              Quiet mode.
+ #         -v              Verbose mode.
  #         --version       Print version.
  #         kramerius_id    Kramerius system id. e.g. mzk
+ #         object_id       Kramerius object id (could be page, series or book edition).
 
 =head1 EXAMPLE2
 
- kramerius-uri mzk
+ # Kalendář Čechů vídeňských na rok
+ # front cover (1 page)
+ # Kramerius v4
+ kramerius2images mzk 87299a2c-e22e-469d-94fa-deac12e52ad7
 
  # Output:
- # http://kramerius.mzk.cz/ 4
+ # 87299a2c-e22e-469d-94fa-deac12e52ad7: ?
 
 =head1 EXAMPLE3
 
- kramerius-uri ABA001
+ # Alfabetski popis imena, navedenih u popisima gubitaka - 1914
+ # issue of serial (multiple pages)
+ # Kramerius v3
+ kramerius2images ABA001 24665811
 
  # Output:
- # http://kramerius.nkp.cz/ 3
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700001.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700002.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700003.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700004.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700005.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700006.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700007.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700008.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700009.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700010.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700011.djvu
+ # http://kramerius.nkp.cz/kramerius/document/ABA001_3050700012.djvu
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/App-Kramerius-URI>
+L<https://github.com/michal-josef-spacek/App-Kramerius-To-Images>
 
 =head1 AUTHOR
 
