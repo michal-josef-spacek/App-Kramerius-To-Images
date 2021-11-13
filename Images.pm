@@ -296,6 +296,28 @@ Run.
 
 Returns 1 for error, 0 for success.
 
+=head1 ERRORS
+
+ new():
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
+         Parameter 'lwp_user_agent' must be a LWP::UserAgent object.
+
+ run():
+         Bad version of Kramerius.
+                 Kramerius version: %s
+         Cannot get title for page '%s'.
+         Cannot get '%s' URI.
+                 HTTP code: %s
+                 message: %s
+         Cannot parse JSON on '%s' URI.
+                 JSON decode error: %s
+         Cannot read library id and work id.
+         Content type isn't 'application/json' for '%s' URI.
+                 Content-Type: %s
+         Library with ID '%s' is unknown.
+         No images to download.
+
 =head1 EXAMPLE
 
  use strict;

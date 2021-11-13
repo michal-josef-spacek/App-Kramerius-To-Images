@@ -1,4 +1,5 @@
 0.02
+ - Add ERRORS section to doc.
  - Add detection for bad JSON content type.
  - Fix author name.
  - Improve error messages.
