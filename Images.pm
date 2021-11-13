@@ -142,7 +142,7 @@ END
 		} else {
 
 			# TODO Stahnout primo soubor. Udelat na to skript.
-			err "Cannot get url '$mets_uri'.",
+			err "Cannot get '$mets_uri' URI.",
 				'HTTP code', $res->code,
 				'Message', $res->message;
 		}
@@ -161,14 +161,14 @@ END
 			$json = $res->content;
 			barf($object_id.'.json', $json);
 		} else {
-			err "Cannot get url $json_uri.",
+			err "Cannot get '$json_uri' URI.",
 				'HTTP code', $res->code,
 				'message', $res->message;
 		}
 
 		# Check JSON content type.
 		if ($res->headers->content_type ne 'application/json') {
-			err "Content type isn't 'application/json' for $json_uri.",
+			err "Content type isn't 'application/json' for '$json_uri' URI.",
 				'Content-Type', $res->headers->content_type;
 		}
 
@@ -177,7 +177,7 @@ END
 			JSON::XS->new->decode($json);
 		};
 		if ($EVAL_ERROR) {
-			err "Cannot parse JSON on '$json_uri' URL.",
+			err "Cannot parse JSON on '$json_uri' URI.",
 				'JSON decode error', $EVAL_ERROR;
 		}
 
@@ -216,7 +216,8 @@ END
 			push @pages, $output_file;
 		}
 	} else {
-		err 'Bad version of Kramerius.';
+		err 'Bad version of Kramerius.',
+			'Kramerius version', $self->{'_kramerius_obj'}->version;
 	}
 	barf('LIST', join "\n", @pages);
 
