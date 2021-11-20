@@ -357,6 +357,20 @@ L<LWP::UserAgent>,
 L<METS::Files>,
 L<Perl6::Slurp>.
 
+=head1 SEE ALSO
+
+=over
+
+=item L<Task::Kramerius>
+
+Install modules for Kramerius system.
+
+=item L<App::Images::To::DjVu>
+
+Base class for images2djvu script.
+
+=back
+
 =head1 REPOSITORY
 
 L<https://github.com/michal-josef-spacek/App-Kramerius-To-Images>
