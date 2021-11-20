@@ -82,7 +82,7 @@ sub run {
 
 	$self->{'_kramerius_obj'} = $self->{'_kramerius'}->get($kramerius_id);
 	if (! defined $self->{'_kramerius_obj'}) {
-		err "Library with ID '$self->{'_kramerius_id'}' is unknown.";
+		err "Library with ID '$kramerius_id' is unknown.";
 	}
 	barf('ROOT', <<"END");
 $kramerius_id
