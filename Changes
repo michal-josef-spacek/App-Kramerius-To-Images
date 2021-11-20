@@ -1,4 +1,5 @@
 0.03
+ - Better error message (object -> instance).
  - Fix error (bad kramerius system id value).
 
 0.02 2021-11-13T12:51:06+01:00

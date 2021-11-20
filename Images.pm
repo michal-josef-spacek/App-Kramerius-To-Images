@@ -35,7 +35,7 @@ sub new {
 
 	if (defined $self->{'lwp_user_agent'}) {
 		if (! $self->{'lwp_user_agent'}->isa('LWP::UserAgent')) {
-			err "Parameter 'lwp_user_agent' must be a LWP::UserAgent object.";
+			err "Parameter 'lwp_user_agent' must be a LWP::UserAgent instance.";
 		}
 	} else {
 		$self->{'lwp_user_agent'} = LWP::UserAgent->new;
@@ -301,7 +301,7 @@ Returns 1 for error, 0 for success.
  new():
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
-         Parameter 'lwp_user_agent' must be a LWP::UserAgent object.
+         Parameter 'lwp_user_agent' must be a LWP::UserAgent instance.
 
  run():
          Bad version of Kramerius.
