@@ -1,4 +1,5 @@
 0.03
+ - Add test for constructor.
  - Better error message (object -> instance).
  - Fix error (bad kramerius system id value).
 
