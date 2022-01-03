@@ -1,4 +1,5 @@
 0.04
+ - Add 'dir_to_store_files' constructor parameter.
  - Add SEE ALSO section to doc.
  - Add doc for 'lwp_user_agent' constructor parameter.
 
