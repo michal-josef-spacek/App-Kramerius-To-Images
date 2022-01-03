@@ -288,6 +288,16 @@ Constructor.
 
 Returns instance of object.
 
+=over 8
+
+=item * C<lwp_user_agent>
+
+LWP::UserAgent object.
+
+Default value is instance of LWP::UserAgent with set user agent to 'kramerius2images/__PACKAGE_VERSION__'.
+
+=back
+
 =head2 C<run>
 
  my $exit_code = $app->run;
